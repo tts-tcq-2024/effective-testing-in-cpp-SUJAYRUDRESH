@@ -50,10 +50,20 @@ void testColorPairs(const std::vector<std::string>& messages) {
     assert(messages[24] == "24 | Violet | Slate\n" && "Last line mismatch");
 }
 
+size_t countOccurrences(const std::string& str, char ch) {
+    size_t count = 0;
+    for (char c : str) {
+        if (c == ch) {
+            count++;
+        }
+    }
+    return count;
+}
+
 void testAlignment(const std::vector<std::string>& messages) {
     for (const auto& line : messages) {
         // Check for a consistent number of '|' characters (should be exactly 2)
-        size_t wireCount = std::count(line.begin(), line.end(), '|');
+        size_t wireCount = countOccurrences(line, '|');
         assert(wireCount == 2 && "Misalignment: Incorrect number of separators '|' in line");
 
         // Check alignment: Ensure that there are exactly 3 columns
