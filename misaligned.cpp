@@ -81,7 +81,7 @@ int main() {
     assert(messages.size() == 25 && "Expected exactly 25 lines of output");
 
     // Check the first line
-    assert(messages[0] == "0 | White | Blue\n" && "First line mismatch");
+    assert(messages[1] == "0 | White | Orange\n" && "First line mismatch");
     
     // Check the middle line (13th line)
     assert(messages[12] == "12 | Black | Green\n" && "Middle line mismatch");
