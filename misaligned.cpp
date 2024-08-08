@@ -38,16 +38,7 @@ int printColorMap(OutputInterface& output) {
 }
 
 void testColorPairs(const std::vector<std::string>& messages) {
-    assert(messages.size() == 25 && "Expected exactly 25 lines of output");
 
-    // Check the first line
-    assert(messages[0] == "0 | White | Blue\n" && "First line mismatch");
-    
-    // Check the middle line (13th line)
-    assert(messages[12] == "12 | Black | Green\n" && "Middle line mismatch");
-    
-    // Check the last line (25th line)
-    assert(messages[24] == "24 | Violet | Slate\n" && "Last line mismatch");
 }
 
 size_t countOccurrences(const std::string& str, char ch) {
@@ -89,7 +80,16 @@ int main() {
     testColorPairs(messages);
     testAlignment(messages);
     //testNumericAlignment(messages);
+    assert(messages.size() == 25 && "Expected exactly 25 lines of output");
+
+    // Check the first line
+    assert(messages[0] == "0 | White | Blue\n" && "First line mismatch");
     
+    // Check the middle line (13th line)
+    assert(messages[12] == "12 | Black | Green\n" && "Middle line mismatch");
+    
+    // Check the last line (25th line)
+    assert(messages[24] == "24 | Violet | Slate\n" && "Last line mismatch");
     assert(result == 25 && "Expected return value to be 25");
     std::cout << "All is well (maybe!)\n";
     return 0;
