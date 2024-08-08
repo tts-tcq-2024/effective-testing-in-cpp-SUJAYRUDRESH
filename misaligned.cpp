@@ -37,9 +37,7 @@ int printColorMap(OutputInterface& output) {
     return i * j;
 }
 
-void testColorPairs(const std::vector<std::string>& messages) {
-
-}
+//void testColorPairs(const std::vector<std::string>& messages) {}
 
 size_t countOccurrences(const std::string& str, char ch) {
     size_t count = 0;
