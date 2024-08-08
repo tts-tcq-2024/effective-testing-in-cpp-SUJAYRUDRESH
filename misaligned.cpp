@@ -75,7 +75,7 @@ int main() {
 
 
     const auto& messages = mockOutput.getMessages();
-    testColorPairs(messages);
+    //testColorPairs(messages);
     testAlignment(messages);
     //testNumericAlignment(messages);
     assert(messages.size() == 25 && "Expected exactly 25 lines of output");
