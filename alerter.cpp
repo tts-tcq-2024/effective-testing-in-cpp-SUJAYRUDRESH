@@ -14,6 +14,7 @@ class StubNetworkAlert : public NetworkAlertInterface {
 public:
     int sendAlert(float celcius) override {
         // Simulate a failure for testing
+        std::cout << "Sending alert for temperature: " << celcius << " celcius.\n";
         return 500;
     }
 };
