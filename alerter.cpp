@@ -46,12 +46,10 @@ int main() {
     StubNetworkAlert stubAlert;
     alertFailureCount = 0;
     alertInCelcius(stubAlert, 400.5); // Should fail
-    assert(alertFailureCount == 0 && "Test failed: Failure count should be 1 but is 0. Bug in alertInCelcius function!");
-    // Reset failure count before next test
-    alertFailureCount = 0;
+    assert(alertFailureCount == 1 && "Test failed: Failure count should be 1 but is 0. Bug in alertInCelcius function!");
 
     alertInCelcius(stubAlert, 303.6); // Should fail
-    assert(alertFailureCount == 0 && "Test failed: Failure count should be 1 but is 0. Bug in alertInCelcius function!");
+    assert(alertFailureCount == 2 && "Test failed: Failure count should be 1 but is 0. Bug in alertInCelcius function!");
 
     std::cout << alertFailureCount << " alerts failed.\n";
     std::cout << "All is well (maybe!)\n";
