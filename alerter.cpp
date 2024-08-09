@@ -3,9 +3,9 @@
 
 int alertFailureCount = 0;
 
-class NetworkAlertInterface {
+class INetworkAlertInterface {
 public:
-    virtual ~NetworkAlertInterface() = default;
+    virtual ~INetworkAlertInterface() = default;
     virtual int sendAlert(float celcius) = 0;
 };
 
@@ -20,7 +20,7 @@ public:
 };
 
 
-class ProductionNetworkAlert : public NetworkAlertInterface {
+class ProductionNetworkAlert : public INetworkAlertInterface {
 public:
     int sendAlert(float celcius) override {
         // Real network sending code here
@@ -30,7 +30,7 @@ public:
 };
 
 
-void alertInCelcius(NetworkAlertInterface& alertSystem, float farenheit) {
+void alertInCelcius(INetworkAlertInterface& alertSystem, float farenheit) {
     float celcius = (farenheit - 32) * 5 / 9;
     int returnCode = alertSystem.sendAlert(celcius);
     if (returnCode != 200) {
